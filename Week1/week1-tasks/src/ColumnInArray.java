@@ -12,13 +12,13 @@ public class ColumnInArray {
 
         // Variables
         int numberOfColumn = in.nextInt();
-        char ch = in.next().charAt(0);
-        double[][] m = new double[12][12];
+        char character = in.next().charAt(0);
+        double[][] matrix = new double[12][12];
 
         // Read Values of matrix
         for (int i = 0; i < 12; i++) {
             for (int j = 0; j < 12; j++) {
-                m[i][j] = in.nextDouble();
+                matrix[i][j] = in.nextDouble();
             }
         }
 
@@ -26,11 +26,11 @@ public class ColumnInArray {
         double result = 0.0;
 
         for (int i = 0; i < 12; i++) {
-            result += m[i][numberOfColumn];
+            result += matrix[i][numberOfColumn];
         }
 
         // Check if he want to get Average
-        if (ch == 'M') {
+        if (character == 'M') {
             result /= 12;
         }
 

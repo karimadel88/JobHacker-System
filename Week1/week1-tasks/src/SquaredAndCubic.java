@@ -11,9 +11,9 @@ public class SquaredAndCubic {
         Scanner in = new Scanner(System.in);
 
         /* Read N from user */
-        int n = in.nextInt();
+        int numberOfLine = in.nextInt();
 
-        for (int i = 1; i <= n; i++) {
+        for (int i = 1; i <= numberOfLine; i++) {
             /* Calculate the square and cube of i */
             int square = i * i;
             int cube = i * i * i;

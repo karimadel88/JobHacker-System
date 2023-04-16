@@ -12,14 +12,14 @@ public class BelowTheMainDiagonal {
         Scanner in = new Scanner(System.in);
 
         // Variables
-        char ch = in.next().charAt(0);
-        double[][] m = new double[12][12];
+        char character = in.next().charAt(0);
+        double[][] matrix = new double[12][12];
 
         // Read Values of matrix
-        int count = 0;
+        int counter = 0;
         for (int i = 0; i < 12; i++) {
             for (int j = 0; j < 12; j++) {
-                m[i][j] = in.nextDouble();
+                matrix[i][j] = in.nextDouble();
             }
         }
 
@@ -27,14 +27,14 @@ public class BelowTheMainDiagonal {
         double result = 0.0;
         for (int i = 1; i < 12; i++) {
             for (int j = 0; j < i; j++) {
-                result += m[i][j];
-                count++;
+                result += matrix[i][j];
+                counter++;
             }
         }
 
         // Check if he want to get Average
-        if (ch == 'M') {
-            result /= count;
+        if (character == 'M') {
+            result /= counter;
         }
 
         // Print Result with one fraction

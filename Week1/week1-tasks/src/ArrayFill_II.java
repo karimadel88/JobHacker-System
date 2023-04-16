@@ -11,21 +11,21 @@ public class ArrayFill_II {
         Scanner in = new Scanner(System.in);
 
         /* Read T */
-        int T = in.nextInt();
+        int number = in.nextInt();
 
         /* Counter */
-        int cnt = 0;
+        int counter = 0;
 
         int[] array = new int[1000];
 
         /* Read 20 integers from user */
         for (int i = 0; i < 1000; i++) {
-            if(cnt == T){
-                cnt = 0;
+            if(counter == number){
+                counter = 0;
             }
             // print the value of each element
-            System.out.println("N[" + i + "] = " + cnt);
-            cnt++;
+            System.out.println("N[" + i + "] = " + counter);
+            counter++;
         }
 
         }

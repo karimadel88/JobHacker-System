@@ -16,9 +16,9 @@ public class Average2 {
         double c = in.nextDouble();
 
         /* Calculate AVG */
-        double avg = ((a*2) + (b*3) + (c*5)) / 10;
+        double average = ((a*2) + (b*3) + (c*5)) / 10;
 
         /* Print the result with one decimal place */
-        System.out.printf("MEDIA = %.1f\n", avg);
+        System.out.printf("MEDIA = %.1f\n", average);
     }
 }
