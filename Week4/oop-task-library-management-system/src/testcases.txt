@@ -1,0 +1,100 @@
+start:
+    1- input:
+        Library(name:"lib1",code:"45")
+       output:
+        Welcome to the Library Application!
+
+login:
+    1- input:
+        User(name:"karim",id:"45")
+       output:
+        Show Main menu and replace login with logout
+
+addBook:
+    1- input:
+        (book title: "The Catcher in the Rye", author name: "J.D. Salinger", book ID: 123, book version: "1st edition")
+       Expected Output:
+        The book was added successfully.
+        The size of the book list now is: 1.
+
+    2- Input:
+            (book title: "To Kill a Mockingbird", author name: "Harper Lee", book ID: -456, book version: "2nd edition", and book availability status: "available")
+       Expected Output:
+            Id Must be positive
+            Invalid Data, Please try Again.
+
+    3- Input:
+            (book title: "To Kill a Mockingbird", author name: "Harper Lee", book ID: "gs", book version: "2nd edition", and book availability status: "available")
+       Expected Output:
+            Invalid input. Please enter an integer.
+
+RemoveBook:
+    -Input:
+        Book ID: 123 (exist)
+    Expected Output:
+        The book with ID 123 was removed successfully.
+        The size of the book list now is: 0.
+
+    -Input:
+        Book ID: 126 (doesn't exist)
+    Expected Output:
+        Cannot remove book. Book does not exist in the library.
+
+    -Input:
+        Book ID: 126 (doesn't exist but borrowed)
+    Expected Output:
+        Cannot remove book. Book is currently borrowed.
+
+CheckoutBook:
+    -Input:
+        Book ID: 126 (exist)
+    Expected Output:
+        Successfully checked out book: <titleOfBook>
+
+    -Input:
+        Book ID: 126 (doesn't exist)
+    Expected Output:
+        Book is not available
+
+    -Input:
+        Book ID: 126 (borrowed)
+    Expected Output:
+        Book already borrowed
+
+ReturnBook:
+    -Input:
+        Book ID: 126 (exist)
+    Expected Output:
+        Book returned successfully.
+
+    -Input:
+        Book ID: 127 (Borrowed)
+    Expected Output:
+        Book was not borrowed by this user
+
+displaying the list of available books:
+    -Input:
+        None
+    Expected Output:
+        List of available books:
+        "To Kill a Mockingbird" by Harper Lee (ID: 789)
+        "1984" by George Orwell (ID: 345)
+        "The Great Gatsby" by F. Scott Fitzgerald (ID: 567)
+
+displaying the list of borrowed books:
+    -Input:
+        None
+    Expected Output:
+        List of borrowed books:
+        "The Catcher in the Rye" by J.D. Salinger (ID: 123, borrowed by user with ID 456)
+        "Pride and Prejudice" by Jane Austen (ID: 234, borrowed by user with ID 789)
+
+
+displaying the book details of a specific book:
+    Input:
+        Book ID: 789
+    Expected Output:
+        Book details for book with ID 789:
+        Title: "To Kill a Mockingbird"
+        Author: Harper Lee
+        Version: 2nd edition
