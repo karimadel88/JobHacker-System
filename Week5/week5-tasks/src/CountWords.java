@@ -13,29 +13,35 @@ public class CountWords {
 
     }
 
+    /**
+     * countWords is a function that take fileName in read from it then count number of words
+     * @returns counter
+     */
     public static int countWords(String fileName) {
         int counter = 0;
-        try{
-            // Instance from file  to move pointer from first charchter
-            FileInputStream fileInput=new FileInputStream(path);
-            // Another Instance from file to move from next Character
-            FileInputStream fileInput2=new FileInputStream(path);
-            // initial Value of to pointers
-            int indexForFirstChar = 0;
-            int indexForNextChar = 0;
+        try {
+            FileInputStream fileInput = new FileInputStream(fileName);
 
-            while (indexForFirstChar != -1){
-                indexForNextChar = fileInput2.read();
-                // Check this pattern (valid char) + (invalid char) example (karim- or karim" " or karim- or --)
-                if(((indexForFirstChar>=65 && indexForFirstChar<=90) || (indexForFirstChar>=97 && indexForFirstChar<=122)) && !((indexForNextChar>=65 && indexForNextChar<=90) || (indexForNextChar>=97 && indexForNextChar<=122))){
+            int previousChar = ' '; // Initialize to space to handle word counting at the start of the file
+            int currentChar;
+
+            while ((currentChar = fileInput.read()) != -1) {
+                if (isCharacterAlphabet(currentChar) && !isCharacterAlphabet(previousChar)) {
                     counter++;
                 }
-                indexForFirstChar = fileInput.read();
+                previousChar = currentChar;
             }
-        }catch (Exception e){
+
+            fileInput.close(); // Close the input stream after use
+        } catch (Exception e) {
             System.out.println(e);
         }
         return counter;
+    }
+
+    // Helper method to check if the character is an alphabet (a-z or A-Z)
+    private static boolean isCharacterAlphabet(int character) {
+        return (character >= 'a' && character <= 'z') || (character >= 'A' && character <= 'Z');
     }
 
 }

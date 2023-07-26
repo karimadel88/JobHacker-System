@@ -10,7 +10,7 @@ public class CalculateTheSumAndAverageFromFile {
     private static final String FILE_URL = "/home/karim/Desktop/internship/JobHacker-System/Week5/week5-tasks/src/Scores.txt";
     public static void main(String[] args) {
         // Call for first time only
-        File file = readFromWebToFile(WEB_URL,FILE_URL);
+        File file = readFromWebToFile(WEB_URL);
         File file1 = new File(FILE_URL);
         System.out.println(getSum(file1));
         System.out.println(getLength(file1));
@@ -18,13 +18,13 @@ public class CalculateTheSumAndAverageFromFile {
     }
 
     // Function to read from web and save it in file
-    public static File readFromWebToFile(String url, String fileUrl){
+    public static File readFromWebToFile(String url){
         File file = new File("");
         try{
             // Instance to deal with url and url function to open stream and read from it
             URL url1 = new URL(url);
             BufferedReader reader = new BufferedReader(new InputStreamReader(url1.openStream()));
-            BufferedWriter writer = new BufferedWriter(new FileWriter(fileUrl));
+            BufferedWriter writer = new BufferedWriter(new FileWriter(FILE_URL));
             String line;
             while ((line = reader.readLine()) != null) {
                 writer.write(line);
