@@ -27,21 +27,22 @@ public class Task1 {
             char queryType = in.next().charAt(0);
 
             switch (queryType) {
-                case 'a': // Insert an element x to the set
+                // Insert an element x to the set
+                case 'a':
                     int x = in.nextInt();
                     set.add(x);
                     break;
-
-                case 'b': // Print the contents of the set in increasing order
+                // Print the contents of the set in increasing order
+                case 'b':
                     printSortedSet(set);
                     break;
-
-                case 'c': // Erase an element x from the set
+                // Erase an element x from the set
+                case 'c':
                     x = in.nextInt();
                     set.remove(x);
                     break;
-
-                case 'd': // Print 1 if the element x is present in the set, else print -1
+                // Print 1 if the element x is present in the set, else print -1
+                case 'd':
                     x = in.nextInt();
                     System.out.println(set.contains(x) ? "1" : "-1");
                     break;
