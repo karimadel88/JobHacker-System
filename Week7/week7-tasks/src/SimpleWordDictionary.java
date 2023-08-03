@@ -1,6 +1,5 @@
 import java.util.*;
-
-public class SimpleWordDictionary {
+public class SimpleWordDictionary  {
     private Map<Character, List<String>> dictionary;
 
     public SimpleWordDictionary() {
